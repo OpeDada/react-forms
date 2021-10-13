@@ -82,6 +82,7 @@ function FormComponent(props) {
                 checked={props.data.isLactoseFree}
             /> Lactose Free?
             </label>
+            <br />
           <button>Submit</button>
       </form>
       <hr/>
