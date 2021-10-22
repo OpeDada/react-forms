@@ -4,7 +4,9 @@ import Form from "./FormContainer"
 
 function App(){
   return (
-    <Form />
+    <div className="main-container">
+        <Form />
+    </div>
   )
 }
 

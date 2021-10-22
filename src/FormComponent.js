@@ -2,7 +2,7 @@ import React from "react"
 
 function FormComponent(props) {
   return (
-    <main>
+    <main className="container">
       <form>
         <input
           type="text"
@@ -21,19 +21,20 @@ function FormComponent(props) {
         />
         <br/>
         <textarea
-          value={"default value"}
+          // value={"default value"}
+          placeholder="default value"
           onChange={props.handleChange}
+          style={{width: "95%", height: "100px"}}
         />
         <br />
-
-        <label>
+        {/* <label>
           <input
             type="checkbox"
             name="isFriendly"
             checked={props.data.isFriendly}
             onChange={props.handleChange}
           /> Is Friendly?
-        </label>
+        </label> */}
         <br />
 
         <label>
@@ -63,13 +64,14 @@ function FormComponent(props) {
           value={props.data.favColor}
           onChange={props.handleChange}
           name="favColor"
+          style={{margin: "20px"}}
           >
             <option value="">-- Please choose a color --</option>
-            <option value="blue">Blue</option>
-            <option value="green">Green</option>
-            <option value="red">Red</option>
-            <option value="orange">Orange</option>
-            <option value="yellow">Yellow</option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+            <option value="Red">Red</option>
+            <option value="Orange">Orange</option>
+            <option value="Yellow">Yellow</option>
 
         </select>
         <br />
@@ -83,17 +85,15 @@ function FormComponent(props) {
             /> Lactose Free?
             </label>
             <br />
-          <button>Submit</button>
       </form>
       <hr/>
+        <div style={{ color: "#1c1836da" }}>
           <h2>Entered Information : </h2>
-          <p>Your name is {props.data.firstName} {props.data.lastName}</p>
-          <p>You are a {props.data.gender}</p>
-          <p>Your favorite color is {props.data.favColor}</p>
-          <p>Your dietary restrictions: </p>
-
+          <p>Your name is: <strong>{props.data.firstName} {props.data.lastName}</strong></p>
+          <p>You are a: <em>{props.data.gender}</em></p>
+          <p>Your favorite color is: <em>{props.data.favColor}</em></p>
           <p>Lactose Free: {props.data.isLactoseFree ? "Yes" : "No"}</p>
-
+        </div>
     </main>
   )
 }
